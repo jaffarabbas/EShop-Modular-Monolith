@@ -1,7 +1,3 @@
-using CatalogModule;
-using BasketModule;
-using OrderingModule;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -24,5 +20,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCatalogModule().UseBasketModule().UseOrderingModule();
 
 app.Run();
